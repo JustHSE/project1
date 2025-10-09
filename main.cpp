@@ -111,6 +111,7 @@ void showStats()
     float totalRating = 0;
     float maxRating = books[0].rating;
     float minRating = books[0].rating;
+    int bestBookIndex = 0;
 
     for (int i = 0; i < bookCount; i++)
     {
@@ -119,6 +120,7 @@ void showStats()
         if (books[i].rating > maxRating)
         {
             maxRating = books[i].rating;
+            bestBookIndex = i;
         }
 
         if (books[i].rating < minRating)
@@ -134,6 +136,8 @@ void showStats()
     cout << "Средняя оценка: " << averageRating << "/10\n";
     cout << "Самая высокая оценка: " << maxRating << "/10\n";
     cout << "Самая низкая оценка: " << minRating << "/10\n";
+    cout << "Самая высоко оценённая книга: \"" << books[bestBookIndex].title 
+         << "\" автора " << books[bestBookIndex].author << " (" << books[bestBookIndex].rating << "/10)\n";
 }
 
 void showMenu()
